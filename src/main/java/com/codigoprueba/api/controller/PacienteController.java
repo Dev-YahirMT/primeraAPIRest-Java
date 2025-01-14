@@ -4,6 +4,7 @@ import com.codigoprueba.api.paciente.DatosRegistroPaciente;
 import com.codigoprueba.api.paciente.Paciente;
 import com.codigoprueba.api.paciente.PacienteRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-    public void registrar(@RequestBody DatosRegistroPaciente datos) {
+    public void registrar(@RequestBody @Valid DatosRegistroPaciente datos) {
         repository.save(new Paciente(datos));
     }
 }
