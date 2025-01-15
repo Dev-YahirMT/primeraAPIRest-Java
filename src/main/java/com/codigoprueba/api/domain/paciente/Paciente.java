@@ -1,6 +1,6 @@
-package com.codigoprueba.api.paciente;
+package com.codigoprueba.api.domain.paciente;
 
-import com.codigoprueba.api.direccion.Direccion;
+import com.codigoprueba.api.domain.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

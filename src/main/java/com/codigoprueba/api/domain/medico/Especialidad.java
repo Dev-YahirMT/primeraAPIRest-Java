@@ -1,4 +1,4 @@
-package com.codigoprueba.api.medico;
+package com.codigoprueba.api.domain.medico;
 
 public enum Especialidad {
     ORTOPEDIA,

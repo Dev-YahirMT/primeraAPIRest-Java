@@ -1,8 +1,8 @@
 package com.codigoprueba.api.controller;
 
-import com.codigoprueba.api.paciente.DatosRegistroPaciente;
-import com.codigoprueba.api.paciente.Paciente;
-import com.codigoprueba.api.paciente.PacienteRepository;
+import com.codigoprueba.api.domain.paciente.DatosRegistroPaciente;
+import com.codigoprueba.api.domain.paciente.Paciente;
+import com.codigoprueba.api.domain.paciente.PacienteRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

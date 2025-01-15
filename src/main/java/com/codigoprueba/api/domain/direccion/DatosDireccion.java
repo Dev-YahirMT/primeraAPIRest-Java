@@ -1,4 +1,4 @@
-package com.codigoprueba.api.direccion;
+package com.codigoprueba.api.domain.direccion;
 
 import jakarta.validation.constraints.NotBlank;
 

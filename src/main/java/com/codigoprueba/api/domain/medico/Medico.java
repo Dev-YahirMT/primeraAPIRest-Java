@@ -1,11 +1,10 @@
-package com.codigoprueba.api.medico;
+package com.codigoprueba.api.domain.medico;
 
-import com.codigoprueba.api.direccion.Direccion;
+import com.codigoprueba.api.domain.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -21,6 +20,7 @@ public class Medico {
     private String email;
     private String documento;
     private String telefono;
+    private Boolean activo;
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
@@ -35,6 +35,23 @@ public class Medico {
         this.documento = datosRegistroMedico.documento();
         this.especialidad = datosRegistroMedico.especialidad();
         this.direccion = new Direccion(datosRegistroMedico.direccion());
+        this.activo = true;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -96,5 +113,18 @@ public class Medico {
                 ", especialidad=" + especialidad +
                 ", direccion=" + direccion +
                 '}';
+    }
+
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        if(datosActualizarMedico.nombre() != null)
+            this.nombre = datosActualizarMedico.nombre();
+        if(datosActualizarMedico.documento() != null)
+            this.documento = datosActualizarMedico.documento();
+        if(datosActualizarMedico.direccion() != null)
+            this.direccion = direccion.actualizarDatos(datosActualizarMedico.direccion());
+    }
+
+    public void desactivarMedico() {
+        this.activo = false;
     }
 }

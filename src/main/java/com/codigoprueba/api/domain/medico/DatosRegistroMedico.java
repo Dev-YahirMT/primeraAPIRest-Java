@@ -1,6 +1,6 @@
-package com.codigoprueba.api.medico;
+package com.codigoprueba.api.domain.medico;
 
-import com.codigoprueba.api.direccion.DatosDireccion;
+import com.codigoprueba.api.domain.direccion.DatosDireccion;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
